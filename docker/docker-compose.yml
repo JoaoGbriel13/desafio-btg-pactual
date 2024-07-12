@@ -1,0 +1,17 @@
+services:
+  postgres:
+    image: postgres
+    ports:
+      - "5432:5432"
+    expose:
+      - "5432"
+    environment:
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=1308
+      - POSTGRES_DB=btg
+      - POSTGRES_ROOT_PASSWORD=1308
+  rabbitmq:
+    image: rabbitmq:3.13-management
+    ports:
+        - 15672:15672
+        - 5672:5672
